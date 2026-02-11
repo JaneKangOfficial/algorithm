@@ -11,6 +11,8 @@ public class Main {
         System.out.println("sumVerBose09 = " + sumVerBose09());
         System.out.println("sumVerBose10 = " + sumVerBose10());
         multiplicationTable();
+        additionTable();
+        squareTable();
 
     }
 
@@ -99,6 +101,44 @@ public class Main {
                 System.out.printf("%3d", i * j);
             }
             System.out.println();
+        }
+    }
+
+    // Q12
+    public static void additionTable() {
+
+        // 헤더
+        System.out.print("   |");
+        for (int i = 1; i <= 9; i++) {
+            System.out.printf("%3d", i);
+        }
+        System.out.println();
+
+        // 구분선
+        System.out.print("---+");
+        System.out.print("---".repeat(9));
+        System.out.println();
+
+        // 본문
+        for (int i = 1; i <= 9; i++) {
+            System.out.printf("%2d |", i);
+            for (int j = 1; j <= 9; j++) {
+                System.out.printf("%3d", i + j);
+            }
+            System.out.println();
+        }
+    }
+
+    // Q13
+    public static void squareTable() {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("정사각형을 출력합니다.");
+        System.out.print("변의 길이: ");
+        int f = sc.nextInt();
+
+        for (int i = 0; i < f; i++) {
+            System.out.println("*".repeat(f));
         }
     }
 }
