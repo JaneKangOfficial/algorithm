@@ -10,6 +10,7 @@ public class Main {
         System.out.println("sumof = " + sumof());
         System.out.println("sumVerBose09 = " + sumVerBose09());
         System.out.println("sumVerBose10 = " + sumVerBose10());
+        multiplicationTable();
 
     }
 
@@ -74,5 +75,30 @@ public class Main {
             r++;
         }
         return "그 수는 " + r + "자리입니다.";
+    }
+
+    // Q11
+    public static void multiplicationTable() {
+
+        // 헤더
+        System.out.print("   |");
+        for (int i = 1; i <= 9; i++) {
+            System.out.printf("%3d", i);
+        }
+        System.out.println();
+
+        // 구분선
+        System.out.print("---+");
+        System.out.print("---".repeat(9));
+        System.out.println();
+
+        // 본문
+        for (int i = 1; i <= 9; i++) {
+            System.out.printf("%2d |", i);
+            for (int j = 1; j <= 9; j++) {
+                System.out.printf("%3d", i * j);
+            }
+            System.out.println();
+        }
     }
 }
