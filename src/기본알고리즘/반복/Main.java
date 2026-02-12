@@ -13,6 +13,10 @@ public class Main {
         multiplicationTable();
         additionTable();
         squareTable();
+        triangleLB();
+        triangleLU();
+        triangleRU();
+        triangleRB();
 
     }
 
@@ -141,4 +145,121 @@ public class Main {
             System.out.println("*".repeat(f));
         }
     }
+
+    // Q14
+    public static void triangleLB() {
+        Scanner sc = new Scanner(System.in);
+        int n;
+
+        System.out.println("왼쪽 아래가 직각인 이등변 삼각형을 출력합니다.");
+
+        do {
+            System.out.print("몇 단 삼각형입니까?: ");
+            n = sc.nextInt();
+        } while (n <= 0);
+
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
+    // Q14
+    public static void triangleLU() {
+        Scanner sc = new Scanner(System.in);
+        int n;
+
+        System.out.println("왼쪽 위가 직각인 이등변 삼각형을 출력합니다.");
+
+        do {
+            System.out.print("몇 단 삼각형입니까?: ");
+            n = sc.nextInt();
+        } while (n <= 0);
+
+        for (int i = 1; i <= n; i++) {
+            for (int j = n; j >= i; j--) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+    }
+
+    // Q14
+    public static void triangleRU() {
+        Scanner sc = new Scanner(System.in);
+        int n;
+
+        System.out.println("오른쪽 위가 직각인 이등변 삼각형을 출력합니다.");
+
+        do {
+            System.out.print("몇 단 삼각형입니까?: ");
+            n = sc.nextInt();
+        } while (n <= 0);
+
+        for (int i = 1; i <= n; i++) {
+            for (int j = 0; j < i-1; j++) {
+                System.out.print(" ");
+            }
+            for (int k = n; k >= i; k--) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+    }
+
+    // Q14
+    public static void triangleRB() {
+        Scanner sc = new Scanner(System.in);
+        int n;
+
+        System.out.println("오른쪽 아래가 직각인 이등변 삼각형을 출력합니다.");
+
+        do {
+            System.out.print("몇 단 삼각형입니까?: ");
+            n = sc.nextInt();
+        } while (n <= 0);
+
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n-i; j++) {
+                System.out.print(" ");
+            }
+            for (int k = 1; k <= i; k++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+    }
+
+/*
+    // 코드 개선
+    public static void printTriangle(int n, Direction direction) {
+
+        for (int i = 1; i <= n; i++) {
+
+            switch (direction) {
+
+                case LEFT_BOTTOM:
+                    System.out.println("*".repeat(i));
+                    break;
+
+                case LEFT_TOP:
+                    System.out.println("*".repeat(n - i + 1));
+                    break;
+
+                case RIGHT_BOTTOM:
+                    System.out.println(" ".repeat(n - i) + "*".repeat(i));
+                    break;
+
+                case RIGHT_TOP:
+                    System.out.println(" ".repeat(i - 1) + "*".repeat(n - i + 1));
+                    break;
+            }
+        }
+    }
+*/
 }
